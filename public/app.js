@@ -14,7 +14,7 @@ function init() {
         "<a href='" + data[i].link + "'>" + data[i].title + "</a>" +
         "</h4>" +
         "<a href='" + data[i].link +
-        "<p data-id='" + data[i]._id + "'class='card-text'></p>" +
+        "'> <p data-id='" + data[i]._id + "'class='card-text'></p>" +
         "</a>" +
         "<button type='button' d-id='" + data[i]._id + "' d-title='" + data[i].title + "' d-link='" + data[i].link + "' d-photo='" + data[i].photo + "'class='btn btn-info save'>Save Article</button>" +
         "</div>" +
