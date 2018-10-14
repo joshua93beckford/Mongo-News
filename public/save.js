@@ -21,9 +21,9 @@ $(document).on("click", "#savenote", function () {
         url: "/articles/" + thisId,
         data: {
             // Value taken from title input
-            title: $("#titleinput").val(),
+            title: $("#titleinput"+thisId).val(),
             // Value taken from note textarea
-            body: $("#bodyinput").val()
+            body: $("#bodyinput"+thisId).val()
         }
     }).then(function (data) {
         $('#' + thisId).modal('hide');
@@ -33,6 +33,6 @@ $(document).on("click", "#savenote", function () {
     })
 
     // Also, remove the values entered in the input and textarea for note entry
-    $("#titleinput").val("");
-    $("#bodyinput").val("");
+    $("#titleinput"+thisId).val("");
+    $("#bodyinput"+thisId).val("");
 });
