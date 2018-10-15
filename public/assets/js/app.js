@@ -2,10 +2,9 @@ var count = 0;
 
 function init() {
   $.getJSON("/articles", function (data) {
-    // For each one
+
     for (var i = count; i < count + 20; i++) {
 
-      // Display the apropos information on the page
       $("#articles").append("<div class='col-lg-3 col-sm-6 portfolio-item'>" +
         "<div class='card h-100'>" +
         "<a href='#'><img class='card-img-top' src='" + data[i].photo + "' alt=''></a>" +
@@ -72,4 +71,5 @@ $(document).on("click", ".scrape", function () {
     }
   });
 });
+
 init();
