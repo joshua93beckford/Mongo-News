@@ -24,9 +24,13 @@ var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect("mongodb://localhost/MongoNews", { useNewUrlParser: true });
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/MongoNews";
+
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
 
 app.get('/', function (req, res) {
   res.render('index');
